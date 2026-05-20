@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Board Website</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f4f4f4;
+        }
+
+        header{
+            background:#1e3a8a;
+            color:white;
+            padding:20px;
+            text-align:center;
+        }
+
+        nav{
+            background:#2563eb;
+            padding:10px;
+            text-align:center;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            margin:15px;
+            font-weight:bold;
+        }
+
+        .hero{
+            padding:50px;
+            text-align:center;
+            background:white;
+        }
+
+        .hero h1{
+            font-size:40px;
+            color:#1e3a8a;
+            margin-bottom:15px;
+        }
+
+        .hero p{
+            font-size:18px;
+            margin-bottom:20px;
+        }
+
+        .search-box input{
+            width:60%;
+            padding:12px;
+            border:1px solid #ccc;
+            border-radius:5px;
+        }
+
+        .search-box button{
+            padding:12px 20px;
+            background:#2563eb;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        .jobs{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            padding:30px;
+        }
+
+        .job-card{
+            background:white;
+            width:300px;
+            margin:15px;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .job-card h3{
+            color:#1e3a8a;
+            margin-bottom:10px;
+        }
+
+        .job-card p{
+            margin:8px 0;
+        }
+
+        .apply-btn{
+            display:inline-block;
+            margin-top:10px;
+            padding:10px 15px;
+            background:#2563eb;
+            color:white;
+            text-decoration:none;
+            border-radius:5px;
+        }
+
+        footer{
+            background:#1e3a8a;
+            color:white;
+            text-align:center;
+            padding:15px;
+            margin-top:20px;
+        }
+
+        @media(max-width:768px){
+            .search-box input{
+                width:90%;
+                margin-bottom:10px;
+            }
+
+            .jobs{
+                flex-direction:column;
+                align-items:center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Job Board</h1>
+        <p>Find Your Dream Job</p>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Jobs</a>
+        <a href="#">Employers</a>
+        <a href="#">Candidates</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <section class="hero">
+        <h1>Welcome to Job Board</h1>
+        <p>Search and apply for the latest jobs</p>
+
+        <div class="search-box">
+            <input type="text" placeholder="Search jobs...">
+            <button>Search</button>
+        </div>
+    </section>
+
+    <section class="jobs">
+
+        <div class="job-card">
+            <h3>Frontend Developer</h3>
+            <p><b>Company:</b> ABC Tech</p>
+            <p><b>Location:</b> Chennai</p>
+            <p><b>Salary:</b> ₹30,000/month</p>
+            <a href="#" class="apply-btn">Apply Now</a>
+        </div>
+
+        <div class="job-card">
+            <h3>Backend Developer</h3>
+            <p><b>Company:</b> XYZ Solutions</p>
+            <p><b>Location:</b> Bangalore</p>
+            <p><b>Salary:</b> ₹45,000/month</p>
+            <a href="#" class="apply-btn">Apply Now</a>
+        </div>
+
+        <div class="job-card">
+            <h3>UI/UX Designer</h3>
+            <p><b>Company:</b> Creative Studio</p>
+            <p><b>Location:</b> Hyderabad</p>
+            <p><b>Salary:</b> ₹35,000/month</p>
+            <a href="#" class="apply-btn">Apply Now</a>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2026 Job Board Website | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
