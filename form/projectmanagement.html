@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management Tool</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f4f4f4;
+        }
+
+        header{
+            background:#1e3a8a;
+            color:white;
+            text-align:center;
+            padding:20px;
+        }
+
+        nav{
+            background:#2563eb;
+            text-align:center;
+            padding:12px;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            margin:15px;
+            font-weight:bold;
+        }
+
+        .hero{
+            background:white;
+            text-align:center;
+            padding:50px 20px;
+        }
+
+        .hero h1{
+            font-size:40px;
+            color:#1e3a8a;
+            margin-bottom:15px;
+        }
+
+        .hero p{
+            font-size:18px;
+            margin-bottom:20px;
+        }
+
+        .task-section{
+            width:80%;
+            margin:30px auto;
+            background:white;
+            padding:25px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .task-section h2{
+            margin-bottom:20px;
+            color:#1e3a8a;
+        }
+
+        input{
+            width:70%;
+            padding:12px;
+            border:1px solid #ccc;
+            border-radius:5px;
+        }
+
+        button{
+            padding:12px 20px;
+            background:#2563eb;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        ul{
+            list-style:none;
+            margin-top:20px;
+        }
+
+        li{
+            background:#eef2ff;
+            padding:12px;
+            margin:10px 0;
+            border-radius:5px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        .delete-btn{
+            background:red;
+            padding:8px 12px;
+            border:none;
+            color:white;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        footer{
+            background:#1e3a8a;
+            color:white;
+            text-align:center;
+            padding:15px;
+            margin-top:30px;
+        }
+
+        @media(max-width:768px){
+
+            .task-section{
+                width:95%;
+            }
+
+            input{
+                width:100%;
+                margin-bottom:10px;
+            }
+
+            button{
+                width:100%;
+            }
+
+            li{
+                flex-direction:column;
+                align-items:flex-start;
+            }
+
+            .delete-btn{
+                margin-top:10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Project Management Tool</h1>
+        <p>Create Projects and Track Tasks Easily</p>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Projects</a>
+        <a href="#">Tasks</a>
+        <a href="#">Progress</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <section class="hero">
+        <h1>Manage Your Projects</h1>
+        <p>Assign tasks, track deadlines, and monitor progress</p>
+    </section>
+
+    <section class="task-section">
+        <h2>Add New Task</h2>
+
+        <input type="text" id="taskInput" placeholder="Enter task name">
+        <button onclick="addTask()">Add Task</button>
+
+        <ul id="taskList"></ul>
+    </section>
+
+    <footer>
+        <p>© 2026 Project Management Tool | All Rights Reserved</p>
+    </footer>
+
+    <script>
+
+        function addTask(){
+
+            let taskInput = document.getElementById("taskInput");
+            let taskValue = taskInput.value;
+
+            if(taskValue === ""){
+                alert("Please enter a task");
+                return;
+            }
+
+            let li = document.createElement("li");
+
+            li.innerHTML = `
+                ${taskValue}
+                <button class="delete-btn" onclick="deleteTask(this)">
+                    Delete
+                </button>
+            `;
+
+            document.getElementById("taskList").appendChild(li);
+
+            taskInput.value = "";
+        }
+
+        function deleteTask(button){
+            button.parentElement.remove();
+        }
+
+    </script>
+
+</body>
+</html>
