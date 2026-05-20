@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Quiz Maker</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f4f4f4;
+        }
+
+        header{
+            background:#4f46e5;
+            color:white;
+            text-align:center;
+            padding:20px;
+        }
+
+        nav{
+            background:#4338ca;
+            padding:12px;
+            text-align:center;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            margin:15px;
+            font-weight:bold;
+        }
+
+        .home{
+            background:white;
+            text-align:center;
+            padding:50px 20px;
+        }
+
+        .home h1{
+            font-size:40px;
+            color:#4338ca;
+            margin-bottom:15px;
+        }
+
+        .home p{
+            font-size:18px;
+            margin-bottom:20px;
+        }
+
+        .btn{
+            padding:12px 20px;
+            background:#4f46e5;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+            margin:10px;
+        }
+
+        .quiz-section{
+            max-width:700px;
+            margin:30px auto;
+            background:white;
+            padding:25px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .quiz-section h2{
+            margin-bottom:20px;
+            color:#4338ca;
+        }
+
+        .option{
+            background:#eef2ff;
+            padding:12px;
+            margin:10px 0;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        .option:hover{
+            background:#c7d2fe;
+        }
+
+        #result{
+            text-align:center;
+            font-size:22px;
+            margin-top:20px;
+            color:green;
+            font-weight:bold;
+        }
+
+        footer{
+            background:#4338ca;
+            color:white;
+            text-align:center;
+            padding:15px;
+            margin-top:30px;
+        }
+
+        @media(max-width:768px){
+            .home h1{
+                font-size:30px;
+            }
+
+            .quiz-section{
+                margin:20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Online Quiz Maker</h1>
+        <p>Create and Take Quizzes Easily</p>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Create Quiz</a>
+        <a href="#">Take Quiz</a>
+        <a href="#">Results</a>
+    </nav>
+
+    <section class="home">
+        <h1>Welcome to Quiz Platform</h1>
+        <p>Create quizzes or test your knowledge now!</p>
+
+        <button class="btn">Create Quiz</button>
+        <button class="btn">Take Quiz</button>
+    </section>
+
+    <section class="quiz-section">
+        <h2 id="question">1. What does HTML stand for?</h2>
+
+        <div class="option" onclick="checkAnswer('a')">
+            a) Hyper Text Markup Language
+        </div>
+
+        <div class="option" onclick="checkAnswer('b')">
+            b) High Transfer Machine Language
+        </div>
+
+        <div class="option" onclick="checkAnswer('c')">
+            c) Hyperlink Transfer Mark Language
+        </div>
+
+        <div class="option" onclick="checkAnswer('d')">
+            d) Home Tool Markup Language
+        </div>
+
+        <div id="result"></div>
+    </section>
+
+    <footer>
+        <p>© 2026 Online Quiz Maker | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        function checkAnswer(answer){
+
+            if(answer === 'a'){
+                document.getElementById("result").innerHTML =
+                "Correct Answer 🎉";
+            }
+            else{
+                document.getElementById("result").innerHTML =
+                "Wrong Answer ❌";
+            }
+        }
+    </script>
+
+</body>
+</html>
